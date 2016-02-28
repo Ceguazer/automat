@@ -18,7 +18,6 @@ namespace ConsoleApplication1
         public bool checkString(string word)
         {
             reset();
-            //dupaaaaaaa to dupa
             char[] array = word.ToArray();
             bool result = false;
             foreach (char character in array)
