@@ -1,31 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
     class State
     {
-        private Dictionary<char, State> hash = new Dictionary<char, State>();
+        private Dictionary<char, StateList> hash = new Dictionary<char, StateList>();
 
-        public void add(char character, State state)
+        public void Add(char character, State state)
         {
             if (hash.ContainsKey(character))
             {
-                hash[character] = state;
+                hash[character].Add(state);
             }
             else
             {
-                hash.Add(character, state);
+                hash.Add(character, new StateList(state));
             }
         }
-        public State get(char character)
+        public StateList Get(char character)
         {
             if (hash.ContainsKey(character))
             {
-                Console.Out.WriteLine("wywolano stan ze znakiem " + character);
                 return hash[character];
             }
             return null;
