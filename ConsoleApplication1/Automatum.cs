@@ -15,6 +15,7 @@ namespace ConsoleApplication1
         {
             InitializeAutomatum();
         }
+
         public bool CheckString(string word)
         {
             Reset();
@@ -38,7 +39,6 @@ namespace ConsoleApplication1
             foreach (State state in currentStates.GetList())
             {
                 newStates.add(state.Get(character));
-
             }
             currentStates = newStates;
             if (currentStates == null)
@@ -47,13 +47,14 @@ namespace ConsoleApplication1
             }
             return currentStates.GetList().Any(state => finalStates.Contains(state));
         }
+
         private void InitializeAutomatum()
         {
             initialStates = new StateList();
 
             State state0 = new State();
             State state1 = new State();
-            State state2 = new State();
+            //State state2 = new State();
             //State state4 = new State();
             //State state5 = new State();
             //State state6 = new State();
@@ -61,11 +62,12 @@ namespace ConsoleApplication1
             //State state8 = new State();
 
             state0.Add('a', state0);
+            state0.Add('b', state0);
             state0.Add('b', state1);
-            state1.Add('a', state2);
-            state1.Add('b', state0);
-            state2.Add('a', state0);
-            state2.Add('b', state2);
+            //state1.Add('a', state2);
+            //state1.Add('b', state0);
+            //state2.Add('a', state0);
+            //state2.Add('b', state2);
             //state3.add('b', state8);
             //state3.add('a', state6);
             //state4.add('b', state1);
@@ -78,9 +80,9 @@ namespace ConsoleApplication1
             //state7.add('a', state7);
             //state8.add('b', state1);
             //state8.add('a', state2);
-            
+
             initialStates.add(state0);
-            finalStates.Add(state2);
+            finalStates.Add(state1);
         }
     }
 }

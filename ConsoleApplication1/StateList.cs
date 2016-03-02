@@ -33,6 +33,7 @@ namespace ConsoleApplication1
         }
         public void add(StateList stateList)
         {
+            if (stateList == null) return;
             foreach (State state in stateList.GetList())
             {
                 if (!list.Contains(state))
