@@ -1,2 +1,1 @@
-<pre class=" language-yaml"><code class=" language-yaml">language<span class="token punctuation">:</span> csharp
-<span class="token key atrule">solution</span><span class="token punctuation">:</span> ConsoleApplication1.sln</code></pre>
+language: csharp 
