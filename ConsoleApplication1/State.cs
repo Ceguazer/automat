@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApplication1
 {
@@ -14,7 +11,7 @@ namespace ConsoleApplication1
         {
             if (hash.ContainsKey(character))
             {
-                hash[character].add(state);
+                hash[character].Add(state);
             }
             else
             {
@@ -25,7 +22,6 @@ namespace ConsoleApplication1
         {
             if (hash.ContainsKey(character))
             {
-                Console.Out.WriteLine("wywolano stany ze znakiem " + character);
                 return hash[character];
             }
             return null;

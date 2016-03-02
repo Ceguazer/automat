@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ConsoleApplication1
 {
@@ -27,24 +23,29 @@ namespace ConsoleApplication1
             }           
         }
 
-        public void add(State state)
+        public void Add(State state)
         {
-            list.Add(state);
+            if (!list.Contains(state))
+            {
+                list.Add(state);
+            }
         }
-        public void add(StateList stateList)
+        public void Add(StateList stateList)
         {
             if (stateList == null) return;
             foreach (State state in stateList.GetList())
             {
-                if (!list.Contains(state))
-                {
-                    list.Add(state);
-                }
+                Add(state);
             }   
         }
         public List<State> GetList()
         {
             return list;
+        }
+
+        public int GetSize()
+        {
+            return list.Count;
         }
     }
 }
